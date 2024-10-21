@@ -52,7 +52,12 @@ const HeroImage = () => {
         custom={2}
         className="absolute bottom-1 right-1"
       >
-        <Image src="/assets/images/pizza-8.png" width={90} height={90} alt="" />
+        <Image
+          src="/assets/images/pizza-8.png"
+          width={110}
+          height={110}
+          alt=""
+        />
       </motion.div>
 
       <motion.div
@@ -64,8 +69,8 @@ const HeroImage = () => {
       >
         <Image
           src="/assets/images/pizza-9.png"
-          width={150}
-          height={150}
+          width={190}
+          height={190}
           alt=""
         />
       </motion.div>
@@ -75,12 +80,12 @@ const HeroImage = () => {
         initial="hidden"
         animate="visible"
         custom={4}
-        className="absolute bottom-5 left-5"
+        className="absolute bottom-5 left-3"
       >
         <Image
           src="/assets/images/pizza-10.png"
-          width={120}
-          height={120}
+          width={150}
+          height={150}
           alt=""
         />
       </motion.div>
@@ -94,8 +99,8 @@ const HeroImage = () => {
       >
         <Image
           src="/assets/images/pizza-11.png"
-          width={150}
-          height={150}
+          width={160}
+          height={160}
           alt=""
         />
       </motion.div>
@@ -109,8 +114,8 @@ const HeroImage = () => {
       >
         <Image
           src="/assets/images/pizza-12.png"
-          width={90}
-          height={90}
+          width={120}
+          height={120}
           alt=""
         />
       </motion.div>

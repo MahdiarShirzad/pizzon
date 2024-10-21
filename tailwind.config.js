@@ -8,9 +8,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        peach: "#FD9D3E ",
       },
+    },
+    fontFamily: {
+      iransans: ["iransans", "sans-serif"],
     },
   },
   plugins: [],

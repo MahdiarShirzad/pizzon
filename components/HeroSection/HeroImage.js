@@ -9,7 +9,7 @@ const HeroImage = () => {
     visible: (index) => ({
       y: 0,
       opacity: 1,
-      transition: { duration: 0.8, delay: index * 0.2, type: "spring" },
+      transition: { duration: 0.8, delay: index * 0.22, type: "spring" },
     }),
   };
 

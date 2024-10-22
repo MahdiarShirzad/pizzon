@@ -1,11 +1,10 @@
 "use client";
 
-import React from "react";
 import Typewriter from "typewriter-effect";
 
 const HeroText = () => {
   return (
-    <div className="w-1/2 text-white">
+    <div className="w-1/2  text-white">
       <div className="text-[75px] font-bold">
         <Typewriter
           onInit={(typewriter) => {
@@ -22,13 +21,13 @@ const HeroText = () => {
           }}
         />
       </div>
-      <div className="mt-4 text-xl">
+      <div className="mt-4 text-2xl">
         <Typewriter
           onInit={(typewriter) => {
             setTimeout(() => {
               typewriter
                 .typeString(
-                  '    <span class="text-peach">پیزون</span> ، سفارش ویژه پیتزا با بهترین کیفیت و طعم'
+                  '    <span class="text-peach text-3xl font-semibold" >پیزون</span> ، سفارش ویژه پیتزا با بهترین کیفیت و طعم 🍕'
                 )
                 .start();
             }, 1000);
@@ -36,7 +35,7 @@ const HeroText = () => {
           options={{
             autoStart: true,
             loop: false,
-            delay: 50,
+            delay: 20,
             cursor: "",
             deleteSpeed: 0,
           }}

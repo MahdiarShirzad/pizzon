@@ -30,7 +30,9 @@ const Header = () => {
         isScrolled ? "py-2" : "py-3"
       } z-30 ${
         isScrolled ? "h-[70px]" : "h-[80px]"
-      } transition-all duration-200 ${isScrolled ? "bg-black" : ""}`}
+      } transition-all duration-200 ${
+        isScrolled ? "bg-zinc-950 shadow-sm shadow-gray-800" : ""
+      }`}
     >
       <nav className="max-w-[1230px] mx-auto flex items-center justify-between text-white">
         <Logo isScrolled={isScrolled} />

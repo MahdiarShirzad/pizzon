@@ -1,28 +1,63 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const textVariants = {
   hidden: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7, delay: 0.3 } },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "spring",
+      stiffness: 250,
+      damping: 10,
+      delay: 0.3,
+      duration: 0.3,
+    },
+  },
 };
 
 const imageVariants = {
   hidden: { opacity: 0, x: 90 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7, delay: 0.3 } },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "spring",
+      stiffness: 250,
+      damping: 10,
+      delay: 0.3,
+      duration: 0.3,
+    },
+  },
 };
 
-const AboutSection = () => {
+const SectionOne = () => {
   const textRef = useRef(null);
   const imageRef = useRef(null);
   const textInView = useInView(textRef, { once: true });
   const imageInView = useInView(imageRef, { once: true });
 
   return (
-    <div className="flex items-center justify-between gap-14 max-w-[1250px] mx-auto">
+    <div className="flex items-center justify-between max-w-[1250px] mx-auto py-20">
+      <motion.div
+        className="w-1/2"
+        ref={imageRef}
+        initial="hidden"
+        animate={imageInView ? "visible" : "hidden"}
+        variants={imageVariants}
+      >
+        <div className=" relative w-[500px] h-[500px]">
+          <Image
+            className="object-cover rounded-[40%]"
+            src="/assets/images/interior.png"
+            fill
+            alt=""
+          />
+        </div>
+      </motion.div>
       <motion.div
         className="w-2/5"
         ref={textRef}
@@ -38,26 +73,9 @@ const AboutSection = () => {
           خدمات تحویل سریع تمرکز داریم تا تجربهای بینظیر برای مشتریان خود فراهم
           آوریم
         </p>
-        <Link
-          className="border border-peach bg-peach text-white mt-9 inline-block text-lg font-normal px-6 py-3 rounded-full"
-          href="about-us"
-        >
-          بیشتر ببینید
-        </Link>
-      </motion.div>
-      <motion.div
-        className="w-1/2"
-        ref={imageRef}
-        initial="hidden"
-        animate={imageInView ? "visible" : "hidden"}
-        variants={imageVariants}
-      >
-        <div className="relative w-[301px] h-[580px]">
-          <Image src="/assets/images/about-pizzon.png" alt="" fill />
-        </div>
       </motion.div>
     </div>
   );
 };
 
-export default AboutSection;
+export default SectionOne;

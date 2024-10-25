@@ -8,7 +8,7 @@ const SpecialtyCard = ({ imageSrc, title }) => {
   const isInView = useInView(ref, { once: true });
 
   const cardVariants = {
-    hidden: { opacity: 0, y: -50 },
+    hidden: { opacity: 0, y: -150 },
     visible: {
       opacity: 1,
       y: 0,

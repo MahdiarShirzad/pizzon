@@ -12,7 +12,7 @@ const NavItems = () => {
       <Link className="hover:text-peach" href="about-us">
         درباره ما
       </Link>
-      <Link className="hover:text-peach" href="">
+      <Link className="hover:text-peach" href="contact-us">
         ارتباط با ما
       </Link>
     </div>

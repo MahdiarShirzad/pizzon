@@ -2,5 +2,5 @@ import Link from "next/link";
 import React from "react";
 
 export const HeaderLeft = () => {
-  return <Link href="">ورود / ثبت نام</Link>;
+  return <Link href="login">ورود / ثبت نام</Link>;
 };

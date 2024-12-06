@@ -7,12 +7,32 @@ import { useRef } from "react";
 
 const textVariants = {
   hidden: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7, delay: 0.3 } },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.3,
+      delay: 0.3,
+      type: "spring",
+      stiffness: 250,
+      damping: 10,
+    },
+  },
 };
 
 const imageVariants = {
   hidden: { opacity: 0, x: 90 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7, delay: 0.3 } },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.3,
+      delay: 0.3,
+      type: "spring",
+      stiffness: 250,
+      damping: 10,
+    },
+  },
 };
 
 const AboutSection = () => {
@@ -22,7 +42,7 @@ const AboutSection = () => {
   const imageInView = useInView(imageRef, { once: true });
 
   return (
-    <div className="flex items-center justify-between gap-14 max-w-[1250px] mx-auto">
+    <div className="flex items-center justify-between gap-14 my-16 max-w-[1250px] mx-auto">
       <motion.div
         className="w-2/5"
         ref={textRef}
@@ -52,8 +72,13 @@ const AboutSection = () => {
         animate={imageInView ? "visible" : "hidden"}
         variants={imageVariants}
       >
-        <div className="relative w-[301px] h-[580px]">
-          <Image src="/assets/images/about-pizzon.png" alt="" fill />
+        <div className="relative w-[470px] h-[400px]">
+          <Image
+            className="rounded-[30%]"
+            src="/assets/images/pizza/pizza-home.webp"
+            alt=""
+            fill
+          />
         </div>
       </motion.div>
     </div>

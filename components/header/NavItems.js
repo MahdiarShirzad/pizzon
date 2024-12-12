@@ -6,7 +6,7 @@ const NavItems = () => {
       <Link className="hover:text-peach" href="/">
         صفحه اصلی
       </Link>
-      <Link className="hover:text-peach" href="">
+      <Link className="hover:text-peach" href="/menu">
         منو
       </Link>
       <Link className="hover:text-peach" href="about-us">

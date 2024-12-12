@@ -1,9 +1,16 @@
 import Image from "next/image";
-import React from "react";
+
+const categories = [
+  "همه",
+  "پیتزا",
+  "برگر",
+  "پاستا",
+  "سوخاری",
+  "پیش غذا",
+  "نوشیدنی",
+];
 
 const SpecialMenu = () => {
-  const categories = ["همه", "پیتزا", "برگر", "پاستا", "پیش غذا", "نوشیدنی"];
-
   return (
     <div className="bg-black">
       <div className=" w-full h-[120px] relative">
@@ -16,9 +23,9 @@ const SpecialMenu = () => {
         <p className=" text-center text-peach mt-4 text-lg">
           طعم‌های بی‌نظیر در منوی ویژه
         </p>
-        <ul className=" flex justify-between items-center text-white mt-10 text-lg gap-4 bg-zinc-800 w-[650px] mx-auto rounded-full">
+        <ul className=" flex justify-between items-center text-white mt-10 text-lg gap-4 bg-zinc-800 w-[750px] mx-auto rounded-full">
           {categories.map((category, index) => (
-            <li className=" py-3 px-6  rounded-full" key={index}>
+            <li className=" py-3 px-6  rounded-full " key={index}>
               {category}
             </li>
           ))}

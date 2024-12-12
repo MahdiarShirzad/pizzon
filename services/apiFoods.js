@@ -11,3 +11,17 @@ export async function getFoods() {
 
   return data;
 }
+
+export async function getFoodsByCategory(category) {
+  let { data, error } = await supabase
+    .from("foods")
+    .select("*")
+    .eq("category", category);
+
+  if (error) {
+    console.log(error);
+    // return [];
+  }
+
+  return data;
+}

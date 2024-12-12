@@ -1,6 +1,5 @@
 import MenuFilter from "@/components/MenuFilter/MenuFilter";
 import Image from "next/image";
-import Link from "next/link";
 
 const categories = [
   { name: "همه", key: "all" },
@@ -13,7 +12,16 @@ const categories = [
   { name: "سالاد", key: "salad" },
 ];
 
-export default function MenuLayout({ all }) {
+export default function MenuLayout({
+  all,
+  pizza,
+  appetizer,
+  beverages,
+  burger,
+  pasta,
+  chcken,
+  salad,
+}) {
   return (
     <div>
       {/* Top Banner */}

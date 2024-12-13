@@ -1,6 +1,8 @@
 import MenuFilter from "@/components/MenuFilter/MenuFilter";
 import Image from "next/image";
 import RenderedMenu from "@/components/RenderedMenu/RenderedMenu";
+import { Suspense } from "react";
+import Spinner from "@/components/Spinner/Spinner";
 
 const Menu = ({ searchParams }) => {
   console.log(searchParams);
@@ -25,7 +27,9 @@ const Menu = ({ searchParams }) => {
       {/* Filters */}
       <MenuFilter />
       {/* Render Active Category Content */}
-      <RenderedMenu filter={filter} />
+      <Suspense fallback={<Spinner />}>
+        <RenderedMenu filter={filter} />
+      </Suspense>
     </div>
   );
 };

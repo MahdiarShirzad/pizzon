@@ -7,66 +7,27 @@ import Pasta from "@/app/menu/MenuSections/Pasta";
 import Pizza from "@/app/menu/MenuSections/Pizza";
 import Salad from "@/app/menu/MenuSections/Salad";
 
+import Spinner from "@/components/Spinner/Spinner";
+import { Suspense } from "react";
+
+const menuComponents = {
+  salad: Salad,
+  beverages: Beverages,
+  appetizer: Appetizer,
+  chicken: Chicken,
+  pasta: Pasta,
+  burger: Burger,
+  pizza: Pizza,
+  all: AllFoods,
+};
+
 const RenderedMenu = ({ filter }) => {
-  if (filter == "salad") {
-    return (
-      <div className="py-16 container max-w-[1300px] mx-auto flex flex-wrap items-center justify-between">
-        <Salad />
-      </div>
-    );
-  }
-
-  if (filter == "beverages") {
-    return (
-      <div className="py-16 container max-w-[1300px] mx-auto flex flex-wrap items-center justify-between">
-        <Beverages />
-      </div>
-    );
-  }
-
-  if (filter == "appetizer") {
-    return (
-      <div className="py-16 container max-w-[1300px] mx-auto flex flex-wrap items-center justify-between">
-        <Appetizer />
-      </div>
-    );
-  }
-
-  if (filter == "chicken") {
-    return (
-      <div className="py-16 container max-w-[1300px] mx-auto flex flex-wrap items-center justify-between">
-        <Chicken />
-      </div>
-    );
-  }
-
-  if (filter == "pasta") {
-    return (
-      <div className="py-16 container max-w-[1300px] mx-auto flex flex-wrap items-center justify-between">
-        <Pasta />
-      </div>
-    );
-  }
-
-  if (filter == "burger") {
-    return (
-      <div className="py-16 container max-w-[1300px] mx-auto flex flex-wrap items-center justify-between">
-        <Burger />
-      </div>
-    );
-  }
-
-  if (filter == "pizza") {
-    return (
-      <div className="py-16 container max-w-[1300px] mx-auto flex flex-wrap items-center justify-between">
-        <Pizza />
-      </div>
-    );
-  }
-
+  const SelectedComponent = menuComponents[filter] || AllFoods;
   return (
     <div className="py-16 container max-w-[1300px] mx-auto flex flex-wrap items-center justify-between">
-      <AllFoods />
+      {/* <Suspense fallback={<Spinner />}> */}
+      <SelectedComponent />
+      {/* </Suspense> */}
     </div>
   );
 };

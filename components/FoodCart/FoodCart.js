@@ -4,7 +4,7 @@ import React from "react";
 
 const FoodCart = ({ food }) => {
   return (
-    <div className="border-2 my-6 h-[460px] w-[380px] py-4 rounded-[8%] overflow-hidden group">
+    <div className="border-2 my-6 h-[460px] w-[390px] py-4 rounded-[8%] overflow-hidden group">
       <div className="w-64 h-64 relative mx-auto transform transition-transform duration-300 group-hover:-translate-y-2">
         <Image className="rounded-[30%]" src={food.img} alt={food.name} fill />
       </div>

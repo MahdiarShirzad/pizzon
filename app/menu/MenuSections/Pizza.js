@@ -1,7 +1,7 @@
 import FoodCart from "@/components/FoodCart/FoodCart";
-import { getFoods, getFoodsByCategory } from "@/services/apiFoods";
+import { getFoodsByCategory } from "@/services/apiFoods";
 
-const PizzaFoods = async () => {
+const Pizza = async () => {
   const foodData = await getFoodsByCategory("پیتزا");
   // const pizzaData = foodData.filter((food) => food.category === "پیتزا");
 
@@ -14,4 +14,4 @@ const PizzaFoods = async () => {
   );
 };
 
-export default PizzaFoods;
+export default Pizza;

@@ -2,7 +2,7 @@ import FoodCart from "@/components/FoodCart/FoodCart";
 import { getFoods } from "@/services/apiFoods";
 
 const AllFoods = async () => {
-  const foodData = await getFoods(); // Fetch all foods
+  const foodData = await getFoods();
 
   return (
     <>

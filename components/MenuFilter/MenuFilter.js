@@ -1,4 +1,6 @@
-import Link from "next/link";
+"use client";
+
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
 
 const categories = [
   { name: "همه", key: "all" },
@@ -12,16 +14,27 @@ const categories = [
 ];
 
 const MenuFilter = () => {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathName = usePathname();
+
+  function handleFilter(filter) {
+    const params = new URLSearchParams(searchParams);
+    params.set("category", filter);
+    router.replace(`${pathName}?${params.toString()}`);
+  }
+
   return (
-    <ul className=" flex justify-between items-center text-white mt-10 text-lg gap- bg-zinc-800 w-[750px] mx-auto rounded-full">
-      {categories.map((category, index) => (
-        <Link
-          href={`/menu/`}
-          className=" py-2 px-5  rounded-full bg"
-          key={index}
-        >
-          {category.name}
-        </Link>
+    <ul className="flex justify-between items-center mt-10 text- gap-4 bg-zinc-300 w-[750px] mx-auto rounded-full">
+      {categories.map((category) => (
+        <li key={category.key}>
+          <button
+            onClick={() => handleFilter(category.key)}
+            className="py-3 px-5 rounded-full block"
+          >
+            {category.name}
+          </button>
+        </li>
       ))}
     </ul>
   );

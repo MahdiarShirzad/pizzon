@@ -18,6 +18,8 @@ const MenuFilter = () => {
   const router = useRouter();
   const pathName = usePathname();
 
+  const activeFilter = searchParams.get("category") ?? "all";
+
   function handleFilter(filter) {
     const params = new URLSearchParams(searchParams);
     params.set("category", filter);
@@ -30,7 +32,9 @@ const MenuFilter = () => {
         <li key={category.key}>
           <button
             onClick={() => handleFilter(category.key)}
-            className="py-3 px-5 rounded-full block"
+            className={`py-3 px-5 rounded-full block ${
+              activeFilter == category.key && "bg-peach text-white"
+            }`}
           >
             {category.name}
           </button>

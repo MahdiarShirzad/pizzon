@@ -11,7 +11,7 @@ const FoodCart = ({ food }) => {
       <h3 className="text-center mt-4 text-xl font-semibold">{food.name}</h3>
       <p className="mt-5 text-gray-600 text-center">{food.desc}</p>
       <p className="mt-3 text-gray-500 text-center text-sm">
-        {food.ingredients.join(" / ")}
+        {food?.ingredients?.join(" / ")}
       </p>
       <Link
         className="text-center block mt-4 text-orange-500 text-lg underline-offset-4 underline"

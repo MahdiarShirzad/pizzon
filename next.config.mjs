@@ -7,9 +7,12 @@ const nextConfig = {
         hostname: "idthmnncqeqziaqpbdku.supabase.co",
         pathname: "/storage/v1/object/public/pizzaImg/**",
       },
+      {
+        protocol: "https",
+        hostname: "idthmnncqeqziaqpbdku.supabase.co",
+        pathname: "/storage/v1/object/public/beberagesImg/**",
+      },
     ],
-    // Alternatively, use the domains array if you don't need pathname filtering
-    // domains: ['idthmnncqeqziaqpbdku.supabase.co'],
   },
 };
 
